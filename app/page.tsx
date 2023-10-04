@@ -11,7 +11,7 @@ export default async function Home() {
         Have a look at some of my projects down below.
       </p>
 
-      <h2 className="mt-16 font-bold text-gray-700 text-3xl">My projects</h2>
+      <h2 className="mt-16 font-bold text-gray-700 text-3xl">Some of my projects</h2>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <Link
