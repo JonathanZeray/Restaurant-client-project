@@ -1,38 +1,129 @@
-import { Project } from "@/types/Project";
 import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
 import { Page } from "@/types/Page";
+import { Tillval } from "@/types/Tillval";
+import { Woks } from "@/types/Woks";
+import { Currys } from "@/types/Currys";
+import { Noodles } from "@/types/Noodles";
 
-export async function getProjects(): Promise<Project[]> {
+export async function getHours(): Promise<Noodles[]> {
   return createClient(clientConfig).fetch(
-    groq`*[_type=="project"]{
+    groq`*[_type=="hours"] {
         _id,
         _createdAt,
         name,
-        "slug": slug.current,
-        "image": image.asset->url,
-        url,
         content,
-        alt
     }`
   );
 }
 
-export async function getProject(slug: string): Promise<Project> {
-  // Difference between these two functions is -
-  //Find the slug that equals to the slug that I am passing in.
+export async function getWoks(): Promise<Woks[]> {
   return createClient(clientConfig).fetch(
-    groq`*[_type=="project" && slug.current == $slug][0]{ 
+    groq`*[_type=="woks"] | order(order asc) {
         _id,
         _createdAt,
         name,
         "slug": slug.current,
-        "image": image.asset->url,
-        url,
         content,
-        alt
-    }`,
-    { slug }
+        order
+    }`
+  );
+}
+
+export async function getCurrys(): Promise<Currys[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type=="currys"] | order(order asc) {
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        price,
+        content,
+        order
+    }`
+  );
+}
+
+export async function getNoodles(): Promise<Noodles[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type=="noodles"] | order(order asc) {
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        price,
+        content,
+        order
+    }`
+  );
+}
+
+export async function getTillval(): Promise<Tillval[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type=="tillval"]{
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        price,
+        content,
+    }`
+  );
+}
+
+export async function getNoodlesTillval(): Promise<Tillval[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type=="noodlesTillval"] | order(order asc){
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        price,
+        content,
+        order
+    }`
+  );
+}
+
+export async function getPopular(): Promise<Noodles[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type=="popular"] | order(order asc) {
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        price,
+        content,
+        order
+    }`
+  );
+}
+
+export async function getExtraSides(): Promise<Tillval[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type=="extraSide"] | order(order asc){
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        price,
+        content,
+        order
+    }`
+  );
+}
+
+export async function getExtraFood(): Promise<Tillval[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type=="extraFood"] | order(order asc){
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        price,
+        content,
+        order
+    }`
   );
 }
 
@@ -57,8 +148,7 @@ export async function getPage(slug: string): Promise<Page> {
       content,
     }`,
     {
-      slug
+      slug,
     }
   );
-
 }
