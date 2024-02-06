@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Bungee";
+  src: url("/Fonts/Bungee-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Bungee", sans-serif;
+}
+
+.header-font {
+  font-family: "Bungee", sans-serif;
+}
+
+.menu-page > h4 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.menu-page > h5 {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.order-btn {
+  transition: bg-color 0.4 ease-in-out;
+}
+
+.order-btn:hover {
+  background-color: #f28c28;
+  border-color: black;
+}
