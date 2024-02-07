@@ -5,6 +5,20 @@ import { Tillval } from "@/types/Tillval";
 import { Woks } from "@/types/Woks";
 import { Currys } from "@/types/Currys";
 import { Noodles } from "@/types/Noodles";
+import { Image } from "@/types/Image";
+
+
+export async function getImage(): Promise<Image[]>{
+  return createClient(clientConfig).fetch(
+    groq`*[_type=="homeImage"] {
+      _id,
+      _createdAt,
+      name,
+      "imageUrl": image.asset->url,
+      "alt": image.alt
+    }`
+  )
+}
 
 export async function getHours(): Promise<Noodles[]> {
   return createClient(clientConfig).fetch(

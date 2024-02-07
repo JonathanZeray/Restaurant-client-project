@@ -8,7 +8,8 @@ import popular from "./popular-schema";
 import extraFood from "./extraFood-schema";
 import extraSide from "./extraSide-schema";
 import hours from "./hours-schema";
+import homeimage from "./homeImage-schema";
 
-const schemas = [woks, page, tillval, currys, noodles, noodlesTillval, popular, extraFood, extraSide, hours]
+const schemas = [woks, page, tillval, currys, noodles, noodlesTillval, popular, extraFood, extraSide, hours, homeimage]
 
 export default schemas;
