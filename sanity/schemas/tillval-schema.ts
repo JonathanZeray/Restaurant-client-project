@@ -19,7 +19,22 @@ const tillval = {
         title: "Price",
         type: "number",
       },
+      {
+        name: "order",
+        title: "Order",
+        type: "number",
+        description: "Position of the item in the menu",
+      },
     ],
+    orderings: [
+      {
+        title: 'Menu Order',
+        name: 'menuOrderAsc',
+        by: [
+          {field: 'order', direction: 'asc'}
+        ]
+      }
+    ]
   };
   
   export default tillval;

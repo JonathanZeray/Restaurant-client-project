@@ -11,20 +11,31 @@
 
 body {
   font-family: "Bungee", sans-serif;
+  background-color: #f9f6ee;
 }
 
 .header-font {
   font-family: "Bungee", sans-serif;
 }
 
-.menu-page > h4 {
+.menu-page {
+  padding-bottom: 3rem;
+}
+
+.menu-page > h3 {
+  font-size: 1.75rem;
   font-weight: 700;
-  font-size: 1.5rem;
+}
+
+.menu-page > h4 {
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 .menu-page > h5 {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
 .order-btn {
@@ -34,4 +45,8 @@ body {
 .order-btn:hover {
   background-color: #f28c28;
   border-color: black;
+}
+
+.opening-hours > p {
+  margin-right: 1.5rem;
 }

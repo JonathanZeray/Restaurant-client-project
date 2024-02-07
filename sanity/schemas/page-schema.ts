@@ -23,6 +23,19 @@ const page = {
       type: "array",
       of: [{ type: "block" }],
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      description: "Position of the item in the nav",
+    },
+  ],
+  orderings: [
+    {
+      title: "Nav Order",
+      name: "navOrderAsc",
+      by: [{ field: "order", direction: "asc" }],
+    },
   ],
 };
 

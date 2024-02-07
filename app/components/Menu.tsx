@@ -133,18 +133,22 @@ export default async function Menu() {
           {extraSides.map((extra) => (
             <div key={extra._id} className="mb-4">
               <div className="flex items-center justify-between w-full sm:w-2/3">
-                <h3 className="font-bold text-xl">{extra.name}</h3>
+                <h3 className="font-bold text-xl text-[#F28C28]">
+                  {extra.name}
+                </h3>
                 <h3 className="">{extra.price ? `${extra.price} kr` : ""}</h3>
               </div>
             </div>
           ))}
         </div>
-        <h3 className="font-bold text-2xl my-12">Extra tillägg i maten</h3>
+        <h3 className="font-bold text-2xl my-12 ">Extra tillägg i maten</h3>
         <div>
           {extraFood.map((food) => (
             <div key={food._id} className="mb-4">
               <div className="flex items-center justify-between w-full sm:w-2/3">
-                <h3 className="font-bold text-xl">{food.name}</h3>
+                <h3 className="font-bold text-xl text-[#F28C28]">
+                  {food.name}
+                </h3>
                 <h3 className="">{food.price ? `${food.price} kr` : ""}</h3>
               </div>
             </div>

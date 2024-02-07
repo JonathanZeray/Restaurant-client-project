@@ -22,7 +22,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className="sticky top-0 bg-[#F28C28] flex items-center justify-between sm:justify-around px-2 mb-6 pb-2 pt-3 text-lg sm:text-xl header-font">
+        <header className="sticky top-0 bg-[#F28C28] flex items-center justify-between sm:justify-around px-2 pb-2 pt-3 text-lg sm:text-xl header-font">
           <Link
             href="/"
             className="flex flex-col items-center leading-5 text-xl sm:text-4xl font-extrabold header-font"

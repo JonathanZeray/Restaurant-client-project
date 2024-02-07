@@ -60,20 +60,21 @@ export async function getNoodles(): Promise<Noodles[]> {
 
 export async function getTillval(): Promise<Tillval[]> {
   return createClient(clientConfig).fetch(
-    groq`*[_type=="tillval"]{
+    groq`*[_type=="tillval"] | order(order asc) {
         _id,
         _createdAt,
         name,
         "slug": slug.current,
         price,
         content,
+        order
     }`
   );
 }
 
 export async function getNoodlesTillval(): Promise<Tillval[]> {
   return createClient(clientConfig).fetch(
-    groq`*[_type=="noodlesTillval"] | order(order asc){
+    groq`*[_type=="noodlesTillval"] | order(order asc) {
         _id,
         _createdAt,
         name,
@@ -101,7 +102,7 @@ export async function getPopular(): Promise<Noodles[]> {
 
 export async function getExtraSides(): Promise<Tillval[]> {
   return createClient(clientConfig).fetch(
-    groq`*[_type=="extraSide"] | order(order asc){
+    groq`*[_type=="extraSide"] | order(order asc) {
         _id,
         _createdAt,
         name,
@@ -115,7 +116,7 @@ export async function getExtraSides(): Promise<Tillval[]> {
 
 export async function getExtraFood(): Promise<Tillval[]> {
   return createClient(clientConfig).fetch(
-    groq`*[_type=="extraFood"] | order(order asc){
+    groq`*[_type=="extraFood"] | order(order asc) {
         _id,
         _createdAt,
         name,
@@ -129,11 +130,12 @@ export async function getExtraFood(): Promise<Tillval[]> {
 
 export async function getPages(): Promise<Page[]> {
   return createClient(clientConfig).fetch(
-    groq`*[_type=="page"]{
+    groq`*[_type=="page"] | order(order asc) {
       _id,
       _createdAt,
       title,
       "slug": slug.current,
+      order
     }`
   );
 }
