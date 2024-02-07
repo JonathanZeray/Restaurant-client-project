@@ -20,6 +20,13 @@ export default async function Page({ params }: Props) {
       <div className="lunch-order_btn">{renderOrderBtn && <OrderBtn />}</div>
       <div className={inter.className}>
         <div className="menu-page">
+          {renderOrderBtn && (
+            <h4 className="text-red-500 flex flex-col mb-2">
+              <p>*Lite stark</p>
+              <p>**Medium stark</p>
+              <p>***Mycket stark</p>
+            </h4>
+          )}
           <PortableText value={page.content} />
         </div>
       </div>
