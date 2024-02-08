@@ -50,3 +50,9 @@ body {
 .opening-hours > p {
   margin-right: 1.5rem;
 }
+
+@media screen and (max-width: 640px) {
+  .menu-text > p {
+    font-size: 0.8rem;
+  }
+}

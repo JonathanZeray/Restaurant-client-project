@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { getPages } from "@/sanity/sanity-utils";
 import Link from "next/link";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +28,17 @@ export default async function RootLayout({
             href="/"
             className="flex flex-col items-center leading-5 text-xl sm:text-4xl font-extrabold header-font"
           >
-            PISSAMAI <span className="text-lg sm:text-xl">THAI FOOD</span>
+            PISSAMAI
+            <div className="flex items-center text-lg sm:text-xl">
+              THAI FOOD
+              <Image
+                src={"./Flag.svg"}
+                width={25}
+                height={30}
+                alt="thai flag image"
+                className="mx-1 rounded-sm hidden sm:flex"
+              />
+            </div>
           </Link>
           <div className="grid grid-cols-2 gap-y-2 text-sm sm:text-lg sm:flex sm:items-center sm:gap-4">
             {pages.map((page) => (

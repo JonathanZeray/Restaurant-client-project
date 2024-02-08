@@ -52,7 +52,7 @@ export default async function Menu() {
             </h4>
           </div>
           {woks.map((wok) => (
-            <div key={wok._id} className="mb-4">
+            <div key={wok._id} className="mb-4 menu-text">
               <div className="flex items-center justify-between w-full sm:w-2/3">
                 <h3 className="font-bold text-3xl text-[#F28C28]">
                   {wok.name}
@@ -72,7 +72,7 @@ export default async function Menu() {
             <p className="text-red-500">### Kan innehålla mjölk</p>
           </div>
           {currys.map((curry) => (
-            <div key={curry._id} className="mb-4">
+            <div key={curry._id} className="mb-4 menu-text">
               <div className="flex items-center justify-between w-full sm:w-2/3">
                 <h3 className="font-bold text-3xl text-[#F28C28]">
                   {curry.name}
@@ -102,7 +102,7 @@ export default async function Menu() {
         <div className="mb-12">
           <h3 className="font-bold text-4xl mb-6">Nudelrätter</h3>
           {noodles.map((noodle) => (
-            <div key={noodle._id} className="mb-4">
+            <div key={noodle._id} className="mb-4 menu-text">
               <div className="flex items-center justify-between w-full sm:w-2/3">
                 <h3 className="font-bold text-3xl text-[#F28C28]">
                   {noodle.name}
@@ -117,7 +117,7 @@ export default async function Menu() {
         </h3>
         <div>
           {popular.map((pop) => (
-            <div key={pop._id} className="mb-4">
+            <div key={pop._id} className="mb-4 menu-text">
               <div className="flex items-center justify-between w-full sm:w-2/3">
                 <h3 className="font-bold text-3xl text-[#F28C28]">
                   {pop.name}
@@ -133,7 +133,7 @@ export default async function Menu() {
           {extraSides.map((extra) => (
             <div key={extra._id} className="mb-4">
               <div className="flex items-center justify-between w-full sm:w-2/3">
-                <h3 className="font-bold text-xl text-[#F28C28]">
+                <h3 className="font-bold text-lg sm:text-xl text-[#F28C28]">
                   {extra.name}
                 </h3>
                 <h3 className="">{extra.price ? `${extra.price} kr` : ""}</h3>
@@ -146,7 +146,7 @@ export default async function Menu() {
           {extraFood.map((food) => (
             <div key={food._id} className="mb-4">
               <div className="flex items-center justify-between w-full sm:w-2/3">
-                <h3 className="font-bold text-xl text-[#F28C28]">
+                <h3 className="font-bold text-lg sm:text-xl text-[#F28C28]">
                   {food.name}
                 </h3>
                 <h3 className="">{food.price ? `${food.price} kr` : ""}</h3>
